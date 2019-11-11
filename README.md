@@ -46,7 +46,7 @@ public class Movie {
 
   public String getTitle (){
       return _title;
-  };
+  }
 }
 
 class Rental {
@@ -71,14 +71,14 @@ class Customer {
 
    public Customer (String name){
       _name = name;
-   };
+   }
 
    public void addRental(Rental arg) {
       _rentals.addElement(arg);
    }
    public String getName (){
       return _name;
-   };
+   }
   
   public String statement() {
      double totalAmount = 0;
@@ -123,6 +123,7 @@ class Customer {
      result += "You earned " + String.valueOf(frequentRenterPoints) +
              " frequent renter points";
      return result;
+     }
 }
 ```
 **COMMIT & PUSH**
