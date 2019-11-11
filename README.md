@@ -16,7 +16,7 @@ Instruções:
 
 # Versão Inicial
 
-As classes que vamos usar fazem parte de um sistema de video-locadora, para aluguel de vídeos.
+As classes que vamos usar fazem parte de um sistema de video-locadora, para aluguel de filmes.
 
 Inicialmente, são três classes: `Movie` (filmes que podem ser alugados), `Rental` (dados de um aluguel) e `Customer` (clientes da locadora).
 
@@ -127,14 +127,6 @@ class Customer {
 ```
 **COMMIT & PUSH**
 
-# Teste de Unidade
-
-Implemente um teste para o método `statement`. Crie alguns objetos do tipo `Movie`; crie um `Customer` com alguns aluguéis (isto é, objetos do tipo `Rental`) e implemente um teste de unidade. Esse teste deve checar se a string retornada por `statement` é realmente aquela esperada.
-
-Após cada refactoring deste roteiro (e antes de dar um push/commit), se certifique de que o teste criado continua passando.
-
-**COMMIT & PUSH**
-
 # Refactorig 1: Extract Method
 
 Extrair um método, chamado `amountFor` de `Customer.statement()`; já que esse último é um método maior e que faz muitas coisas. O método extraído vai conter o código relativo ao comentário *determine amounts for each line*.
@@ -176,7 +168,7 @@ public String statement() {
 
 # Refactoring 2: Rename
 
-Renomear o parâmetro de `amounfFor` para ter o nome `aRental`. Veja abaixo a versão após a renomeação:
+Renomear o parâmetro de `amountFor` para ter o nome `aRental`. Veja abaixo a versão após a renomeação:
 
 ```java
 private double amountFor(Rental aRental) {
@@ -288,7 +280,7 @@ public String statement() {
 
 Resumindo o que foi feito acima: `thisAmount` sumiu e, nos dois pontos em que era usada, substitui-se por uma chamada a `getCharge()`.
 
-Motivação para esse refactoring (chamado Replace Temp with Query): ficar livre de variáveis temporárias, que tendem a dificultar o entendimento do código; pois você tem que lembrar o que elas armazenam. Claro, pode-se alegar que isso causa um problema de performance. Porém, esse possível problema pode ser inclusive resolvido pelo compilador (isto é, pelas estratégias de otimização de código implementadas pelo compilador de Java).
+Motivação para esse refactoring (chamado Replace Temp with Query): ficar livre de variáveis temporárias, que tendem a dificultar o entendimento do código; pois você tem que lembrar o que elas armazenam. Claro, pode-se alegar que isso causa um problema de performance. Porém, esse possível problema pode ser inclusive resolvido pelo compilador (isto é, pelas estratégias de otimização de código implementadas pelo compilador Java).
 
 
 **COMMIT & PUSH**
@@ -386,7 +378,7 @@ public String statement() {
      }
 ```
 
-Dois comentários breve, sobre alguns pontos que você já pode estar pensando sobre os últimos refactorings:
+Dois comentários sobre alguns pontos que você já pode estar pensando sobre os últimos refactorings:
 
 * Eles aumentaram o tamanho do código: porém, também não foi tanto assim ...
 * Eles fizeram com o que o loop de `rentals` seja percorrido três vezes; na primeira versão do código, esse loop era executado uma única vez. Isso vai gerar problemas de performance? Talvez sim; mas, provavelmente na maioria dos casos, não vai fazer diferença, pois um cliente não tem tantos filmes alugados.
