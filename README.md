@@ -1,6 +1,6 @@
 # Aula Prática sobre Refactoring
 
-**Prof. Marco Tulio Valente**
+**Prof. Willian Oizumi -- Exercício Adaptado do Prof. Marco Tulio Valente**
 
 Objetivo: realizar alguns refactorings em um sistema hipotético, usado no livro do Fowler. Em caso de dúvidas, consulte o Capítulo 1 desse livro.
 
